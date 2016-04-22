@@ -38,7 +38,7 @@ function render(wrap, template, data) {
 function mksmbtn(){
     var addbutton = wrap.innerHTML;
     addbutton += '<button onclick="viewmore()">더보기</button>'
-    wrap.innerHTML = html;
+    wrap.innerHTML = addbutton;
 }
 
 function viewmore(){
