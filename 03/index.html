@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Report 02, Carousel</title>
+    <style>
+        container {display: block; width: 400px; height: 80px; overflow:hidden;}
+    </style>
+</head>
+<body>
+    <container>
+        <div id='imgview'></div>
+        <!--<section id="2"><span id="imgwrap2"></span></section>
+        <section id="3"><span id='imgwrap3'></span></section>-->
+    </container>
+<!--<button type="button" onclick="location.href='#1'"> 1 페이지 </button>
+    <button type="button" onclick="location.href='#2'"> 2 페이지 </button>
+    <button type="button" onclick="location.href='#3'"> 3 페이지 </button>-->
+    <!--숫자 증가시켜서 해야할 것 같은데  그걸 못하겠어서 잔머리를 굴려봤습니다..ㅎㅎ -- 아래 수정!-->
+    <button id='bview'> 이전 </button>
+    <button id='nview'> 다음 </button>
+<script>
+    var todayPhoto = [
+        {"img":"http://icon.daumcdn.net/w/c/12/05/82877085750988319.jpeg"},
+        {"img":"http://icon.daumcdn.net/w/c/12/05/82876693901189319.jpeg"},
+        {"img":"http://icon.daumcdn.net/w/c/12/05/82876307459008319.jpeg"},
+        {"img":"http://icon.daumcdn.net/w/c/12/05/81730673405131839.jpeg"},
+        {"img":"http://icon.daumcdn.net/w/c/12/05/81728759258718839.jpeg"},
+        {"img":"http://icon.daumcdn.net/w/c/12/05/81728404408992839.jpeg"},
+        {"img":"http://icon.daumcdn.net/w/c/12/05/81728227037306839.jpeg"},
+        {"img":"http://icon.daumcdn.net/w/c/12/05/81727815537682839.jpeg"}
+    ];
+    
+    /*var imgwrap1 = document.getElementById('imgwrap1');
+    var str = '';
+    for(var i=0; i<=2; i++){
+        str += '<img src="'+todayPhoto[i].img+'"> ';
+    }
+    imgwrap1.innerHTML = str;
+    
+    var imgwrap2 = document.getElementById('imgwrap2');
+    var str = '';
+    for(var i=3; i<=5; i++){
+        str += '<img src="'+todayPhoto[i].img+'"> ';
+    }
+    imgwrap2.innerHTML = str;
+    
+    var imgwrap3 = document.getElementById('imgwrap3');
+    var str = '';
+    for(var i=6; i<=7; i++){
+        str += '<img src="'+todayPhoto[i].img+'"> ';
+    }
+    imgwrap3.innerHTML = str;*/
+    // 이 부분도 뭔가 어색합니다 ㅠㅠ 함수?로 묶어줘야 하나요??? -- 아래 수정본
+    
+    var imgview = document.getElementById('imgview');
+    var bview = document.getElementById('bview');
+    var nview = document.getElementById('nview');
+    
+    var page =1;
+    var firstimg=0;
+    var lastimg=3;
+    
+    function imgwrap(start, end){ // 이미지 랩핑
+        str = '';
+        for(var i=start; i<end; i++){ 
+            if (!todayPhoto[i]) {continue;} // 마지막 사진 2개로 인한 오류 방지
+            str += '<img src="'+todayPhoto[i].img+'"> ';
+        }
+        imgview.innerHTML = str;
+        console.log('현재 페이지 : '+page);
+    }
+    
+    nview.addEventListener('click', function(){
+        if (page===3) {alert('마지막 페이지')}
+        else { console.log('nview, 다음 페이지로 이동'); page++;
+             lastimg = page*3; firstimg = lastimg-3;
+             imgwrap(firstimg, lastimg)}
+        })
+    bview.addEventListener('click', function(){
+        if (page===1) { alert('첫 페이지')}  
+        else { console.log('bview, 이전 페이지로 이동'); page--;
+              lastimg = page*3; firstimg = lastimg-3;
+              imgwrap(firstimg, lastimg)}
+        })
+    
+    imgwrap(firstimg, lastimg);
+    
+    
+
+</script>
+
+</body>
+</html>
