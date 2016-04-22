@@ -3,7 +3,7 @@
 <head>
     <meta lang="kr">
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/searchcss.css"/>
+    <link rel="stylesheet" type="text/css" href="searchcss.css"/>
     
     <title>Daum Open Api를 이용한 검색</title>
 </head>
@@ -13,9 +13,11 @@
         <div class="search">
             <input type="text" id="searchkeyword" value="" placeholder="검색할 단어를 입력하세요">
             <input type="button" id="searchbtn" value="검색">
+            
+            <ul id=wrap></ul>
         </div>
         
-        <ul id=wrap></ul>
+        
     
         <script type="text/template" id="searchresult">
         <% for(var i=1; i<list.length; i++) { var sresult = list[i]; %>

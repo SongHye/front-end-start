@@ -1,10 +1,20 @@
 body{width:100%;}
 
-.search {width: 50%; border: 1px black solid; margin: 0% auto 0% auto;}
-.search form input {
-    display:block; float:left;
+.search {width: 80%; border: 1px black solid; margin: 0% auto 0% auto;}
+.search input:first-child {
+    display:inlie-block;
     background-color:mistyrose;
-    margin:2% 1% 2% 35%;
+    margin: 2% 1% 3% 38%;
 }
-.search input {margin:2% auto 2% 0%;}
-.clear{clear:both;}
+.search input:last-child {
+    display:inline-block;
+    margin : 2% auto 3% 0%;
+}
+
+li {display: block; 
+    margin: 1% 5% 1% auto;
+    padding: 1% 1% 1% 1%;
+    border: 1px solid black;
+}
+
+a {text-decoration: none;}
