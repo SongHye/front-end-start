@@ -1,11 +1,18 @@
-console.log('openapi.js');
+console.log('Hello searchapi.js');
 var wrap = document.getElementById('wrap');
+var q = document.getElementById('searchkeyword')
+var apikey = '6aaaae9ac6df9b23cd7f506304ffe14f';
 var template = document.getElementById('searchresult').innerHTML;
 
-var apikey = '6aaaae9ac6df9b23cd7f506304ffe14f';
 
-var q = document.getElementById('searchkeyword')
-var apiurl = 'https://apis.daum.net/search/vclip?q='+q+'&apikey='+apikey+'&output=json';
+
+
+
+
+function makeUrl(q){
+    var apiurl = 'https://apis.daum.net/search/vclip?q='+q+'&apikey='+apikey+'&output=json';
+    return apiurl;
+}
 
 console.log(apiurl);
 
@@ -14,4 +21,4 @@ function render(wrap, template, data){
     wrap.innerHTML = html;
 }
 
-getJSON(apiurl, function(res){console.log(res);});
+getJSON(apiurl, function(res){ console.log(res); });
