@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+<head>
+    <meta lang="kr">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/searchcss.css"/>
+    
+    
+    <title>Daum Open Api를 이용한 검색</title>
+    
+    
+</head>
+    
+<body>
+    <container>
+        <div class="search">
+            <form onsubmit=button type="submit">
+              <input type="text" name="searchkeyword" value="" placeholder="검색할 단어를 입력하세요">
+            </form>
+            <input type="button" value="검색" onclick="checkFrm()">
+            <span class="clear"></span>
+        </div>
+        
+        <script type="text/javascript">
+        function checkFrm() {
+               //값에 대한 검사 : 브라우저 내부에서...
+               if(document.searchkeyword.id.value == ""){
+                       alert("입력된 단어가 없습니다.");
+                       return;
+               }
+               document.searchkeyword.submit();               //전송
+        }
+            </script>
+        
+        <ul id=wrap></ul>
+    
+        <script type="text/template" id="searchresult">
+        <% for(var i=1; i<list.length; i++) { var sresult = list[i]; %>
+        <li>
+            <div><a href="<%= sresult.link %>"> <%=sresult.title%> </a></div>
+        </li>
+        <%} %>
+        </script>
+        
+    </container>
+    
+    <script src="jsnop.js"></script>
+    <script src="searchjs.js"></script>
+</body>
+</html>

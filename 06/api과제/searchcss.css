@@ -1,0 +1,10 @@
+body{width:100%;}
+
+.search {width: 50%; border: 1px black solid; margin: 0% auto 0% auto;}
+.search form input {
+    display:block; float:left;
+    background-color:mistyrose;
+    margin:2% 1% 2% 35%;
+}
+.search input {margin:2% auto 2% 0%;}
+.clear{clear:both;}
