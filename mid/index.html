@@ -14,7 +14,7 @@
     <div class="input-group">
       <input type="text" class="form-control" id="q" placeholder="검색어를 넣어주세요">
       <div class="input-group-addon">
-        <button class="btnbtn-primary">
+        <button class="btnbtn-primary" id="searchbtn">
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </button>
       </div>
@@ -34,11 +34,25 @@
   <!-- 이미지 있을경우만 이미지 노출 -->
   <div id="wrap" class="mov-panel" style="margin-top:30px"></div>
     
+    <script type="text/template" id="sResultTemplate">
+<ul>
+  <% for(var i=0; i<list.length; i++) { var sresult = list[1]; %>
+  <li>
+    <img src= "<%=sresult.thumbnail%>">
+    <a href = "<%=sresult.link %>"> <%=sresult.title%></a>
+  </li>
+  <%} %>
+</ul>
+</script> 
+    
 </div> <!-- container -->
     
   <!-- 더보기 있을경우만 노출 -->
-  <button class="btn btn-default btn-block" id="moreBt">더보기</button>
-  <script type="text/template" id="insert_pic"> <img src="ajax-loader.gif"> </script>
+  <script type="text/template" id="nextpagebtn"></script>
+  <script type="text/template" id="image_insert"> <img src="ajax-loader.gif"> </script>
+    
+    <script src="midjs.js"></script>
+    <script src="util.js"></script>
 
 </body>
 </html>
