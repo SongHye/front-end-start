@@ -21,7 +21,8 @@
 
       var todo = $.extend({}, app.model, {
         id: app.util.uniqId(),
-        title: fieldValue
+        title: fieldValue,
+        checker:false
       });
 
       //console.log('new​ todo.model:', todo);

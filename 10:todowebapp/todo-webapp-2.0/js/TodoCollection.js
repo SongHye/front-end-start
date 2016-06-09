@@ -30,7 +30,26 @@
 
       app.$wrap.trigger("removeCollection", [data]);
 
-    }
+    },
+   check: function(id){
+      
+      for(var i=0; i<data.length; i++){
+         if(data[i].id === id){
+            console.log('check find',i)
+            if(data[i].checker === true){
+               data[i].checker = false
+            }
+            else{
+               data[i].checker = true
+            }
+            
+            console.log(data[i].title + "'s checker is ")
+            console.log(data[i].checker)
+         
+         }
+      }
+      app.$wrap.trigger("checkCollection", [data]);
+   }
 
   };
 })(Todo, jQuery);

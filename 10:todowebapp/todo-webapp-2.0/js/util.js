@@ -23,6 +23,6 @@
 
   app.$wrap.on('addCollection', app.util.storage.save);
   app.$wrap.on('removeCollection', app.util.storage.save);
-
+  app.$wrap.on("checkCollection", app.util.storage.save);
 })(Todo);
 

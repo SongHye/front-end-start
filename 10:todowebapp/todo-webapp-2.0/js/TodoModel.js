@@ -3,7 +3,8 @@
   app.model = {
 
     id: '',
-    title: ''
+    title: '',
+    checker:''
 
   };
 })(Todo);

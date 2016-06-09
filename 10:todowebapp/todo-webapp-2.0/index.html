@@ -25,7 +25,7 @@
   <% for(var i=0; i < todos.length; i++) { %>
   <li data-id="<%= todos[i].id %>">
     <button class="delete">×</button>
-    <input type="checkbox" class="toggle-checked">
+    <input type="checkbox" class="toggle-checked" <% if(todos[i].checker === true) {%> checked <%} %> >
     <span class="text"><%=todos[i].title%></span>
   </li>
   <%} %>
