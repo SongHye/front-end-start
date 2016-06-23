@@ -1,6 +1,3 @@
-
-
-
 (function(app) {
 
   app.util = {
