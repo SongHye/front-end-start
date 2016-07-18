@@ -19,21 +19,7 @@ var nextPagebtn = document.getElementById('nextPagebtn');
 var morebtn   = document.getElementById('moreBtn');
 
 
-schbtn.addEventListener('click', board_flag);           // 기본검색결과
-schbtn.addEventListener('click', dosch);
-board_tab.addEventListener('click', board_flag);
-board_tab.addEventListener('click', dosch);
-video_tab.addEventListener('click', video_flag);
-video_tab.addEventListener('click', dosch);
-image_tab.addEventListener('click', image_flag);
-image_tab.addEventListener('click', dosch);
-tips_tab.addEventListener('click', tips_flag);
-tips_tab.addEventListener('click', dosch);
-blog_tab.addEventListener('click', blog_flag);
-blog_tab.addEventListener('click', dosch);
-cafe_tab.addEventListener('click', cafe_flag);
-cafe_tab.addEventListener('click', dosch);
-//morebtn.addEventListener('click', nextPage);
+
 
 function board_flag() {
     flag = "board";
@@ -99,7 +85,7 @@ function blog_flag(event) {
     board_tab.className = "no";
     video_tab.className = "no";
     image_tab.className = "no";
-    tips_tab.className  = "no"; 
+    tips_tab.className = "no"; 
     blog_tab.className  = "active";
     cafe_tab.className  = "no";
     // console.log( flag + ' 탭 활성화');
@@ -118,6 +104,22 @@ function cafe_flag(event) {
     cafe_tab.className  = "active";
     // console.log( flag + ' 탭 활성화');
 }
+schbtn.addEventListener('click', board_flag);           // 기본검색결과
+schbtn.addEventListener('click', dosch);
+board_tab.addEventListener('click', board_flag);
+board_tab.addEventListener('click', dosch);
+video_tab.addEventListener('click', video_flag);
+video_tab.addEventListener('click', dosch);
+image_tab.addEventListener('click', image_flag);
+image_tab.addEventListener('click', dosch);
+tips_tab.addEventListener('click', tips_flag);
+tips_tab.addEventListener('click', dosch);
+blog_tab.addEventListener('click', blog_flag);
+blog_tab.addEventListener('click', dosch);
+cafe_tab.addEventListener('click', cafe_flag);
+cafe_tab.addEventListener('click', dosch);
+//morebtn.addEventListener('click', nextPage);
+
 
 function mkUrl(q, flag){
     var apikey = '6aaaae9ac6df9b23cd7f506304ffe14f';

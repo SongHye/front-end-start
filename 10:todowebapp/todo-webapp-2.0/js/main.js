@@ -36,6 +36,4 @@
     app.collection.set( initData );
   }
 
-
-
 })(jQuery, window, Todo);
